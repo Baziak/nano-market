@@ -1,0 +1,33 @@
+.item-image {
+    max-height: 150px;
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+.page-title {
+    text-align: center;
+    margin-top: 32px;
+}
+.price-cell {
+    text-align: right;
+}
+.add-to-cart-form {
+    margin-bottom: 0;
+}
+.count-input {
+    width: 48px;
+    margin: 0px;
+    text-align: right;
+}
+.remove {
+    padding: 0 14px;
+    margin: 0px;
+    text-decoration: none;
+    color: #0e0e0e;
+}
+.remove:hover {
+    color: #990000;
+}
+footer {
+    text-align: center;
+}

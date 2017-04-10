@@ -1,0 +1,30 @@
+<table class="u-full-width">
+    <thead>
+    <tr>
+        <th>Image</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($products as $id => $product) :?>
+        <tr>
+            <td><img src="images/<?= $product['imageName'] ?>" class="item-image" /></td>
+            <td><h5><?= $product['title'] ?></h5>
+                <?= $product['description'] ?><br/>
+                <br/>
+                <form method="POST"
+                      action="index.php?action=add"
+                      class="add-to-cart-form">
+                    <input type="hidden" name="addIdInput" value="<?= $id ?>" >
+                    <input class="button" type="submit" value="Buy">
+                    <input type="text" class="count-input"
+                           name="addCountInput"
+                           placeholder="1"
+                    />
+                    item(s) for <strong><?= $product['price'] ?>&nbsp;₴</strong>
+                </form>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

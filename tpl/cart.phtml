@@ -1,0 +1,35 @@
+<?php if (empty(getCartItems())) : ?>
+
+<?php else: ?>
+    <table class="u-full-width">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach (getCartItems() as $item) :?>
+            <tr>
+                <td><?= $products[$item['id']]['title'] ?></td>
+                <td class="price-cell"><?= $products[$item['id']]['price'] ?>&nbsp;₴<br/></td>
+                <td>
+                    <input type="text" class="count-input"
+                           disabled="disabled"
+                           value="<?= $item['count'] ?>"
+                    />
+                    <a class="remove"
+                       href="index.php?action=remove&id=<?= $item['id'] ?>"
+                       title="Remove">✕</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        <tr>
+            <td>Total:</td>
+            <td class="price-cell"><?= calculateCartTotalPrice() ?>&nbsp;₴</td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+<?php endif; ?>
